@@ -32,7 +32,7 @@ def segment_sum_coo(
     src_shape = src.shape
     index_shape = index.shape
     dim = len(index_shape) - 1
-    # broadcast indptr to src
+    # broadcast index to src
     index_shape[:dim] = src_shape[:dim]
     if src.numel() == 0:
         index = index.reshape(index_shape)
@@ -121,7 +121,7 @@ def segment_mean_coo(
     src_shape = src.shape
     index_shape = index.shape
     dim = len(index_shape) - 1
-    # broadcast indptr to src
+    # broadcast index to src
     index_shape[:dim] = src_shape[:dim]
     if src.numel() == 0:
         index = index.reshape(index_shape)
@@ -183,7 +183,7 @@ def segment_min_coo(
     src_shape = src.shape
     index_shape = index.shape
     dim = len(index_shape) - 1
-    # broadcast indptr to src
+    # broadcast index to src
     index_shape[:dim] = src_shape[:dim]
     if src.numel() == 0:
         index = index.reshape(index_shape)
@@ -248,7 +248,7 @@ def segment_max_coo(
     src_shape = src.shape
     index_shape = index.shape
     dim = len(index_shape) - 1
-    # broadcast indptr to src
+    # broadcast index to src
     index_shape[:dim] = src_shape[:dim]
     if src.numel() == 0:
         index = index.reshape(index_shape)
@@ -291,7 +291,7 @@ def segment_coo(
     index: paddle.Tensor,
     out: Optional[paddle.Tensor] = None,
     dim_size: Optional[int] = None,
-    reduce: str = "sum",
+    reduce: Optional[str] = "sum",
 ) -> paddle.Tensor:
     r"""Reduces all values from the `src` tensor into `out` at the
     indices specified in the `index` tensor along the last dimension of

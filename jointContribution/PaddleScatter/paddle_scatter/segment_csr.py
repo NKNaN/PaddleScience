@@ -240,7 +240,7 @@ def segment_csr(
     src: paddle.Tensor,
     indptr: paddle.Tensor,
     out: Optional[paddle.Tensor] = None,
-    reduce: str = "sum",
+    reduce: Optional[str] = "sum",
 ) -> paddle.Tensor:
     r"""
     Reduces all values from the `src` tensor into `out` within the
@@ -268,7 +268,7 @@ def segment_csr(
 
     $$
     \mathrm{out}_i =
-    \sum_{j = \mathrm{indptr}[i]}^{\mathrm{indptr}[i+1]-1}~\mathrm{src}_j.
+    \sum_{j = \mathrm{indptr}[i]}^{\mathrm{indptr}[i+1]-1}~\mathrm{src}_j
     $$
 
     Args:

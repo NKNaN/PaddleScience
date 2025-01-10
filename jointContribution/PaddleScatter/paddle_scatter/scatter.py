@@ -314,7 +314,7 @@ def scatter(
     dim: int = -1,
     out: Optional[paddle.Tensor] = None,
     dim_size: Optional[int] = None,
-    reduce: str = "sum",
+    reduce: Optional[str] = "sum",
 ) -> paddle.Tensor:
     r"""Reduces all values from the `src` tensor into `out` at the
     indices specified in the `index` tensor along a given axis`dim`.

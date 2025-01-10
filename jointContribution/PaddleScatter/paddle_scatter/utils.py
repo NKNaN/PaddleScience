@@ -6,7 +6,7 @@ def broadcast(src: paddle.Tensor, other: paddle.Tensor, dim: int) -> paddle.Tens
 
     Denote dim = :math:`i`,
     other.shape = :math:`(x_0, ..., x_{i-1}, x_i, x_{i+1}, ..., x_{n-1})`,
-    src.shape = :math:(x_i,)`, src = :math:`[y_0, ..., y_{x_i-1}]`,
+    src.shape = :math:`(x_i,)`, src = :math:`[y_0, ..., y_{x_i-1}]`,
     where each element satisfying 0 <= element < x_i
 
     This util function broadcast `src` to the shape of `other`'s.
