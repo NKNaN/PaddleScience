@@ -216,7 +216,7 @@ def scatter_min(
         Tuple[paddle.Tensor, paddle.Tensor], the reduced min tensor and arg_min tensor.
     """
     if dim < 0:
-        dim = dim + index.dim()
+        dim = dim + src.dim()
     index = broadcast(index, src, dim)
     size = src.shape
     if dim_size is not None:
@@ -276,7 +276,7 @@ def scatter_max(
         Tuple[paddle.Tensor, paddle.Tensor], the reduced max tensor and arg_max tensor.
     """
     if dim < 0:
-        dim = dim + index.dim()
+        dim = dim + src.dim()
     index = broadcast(index, src, dim)
     size = src.shape
     if dim_size is not None:
